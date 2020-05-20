@@ -13,7 +13,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
-    var weatherManager = WeatherManager()
+    var weatherManager = WeatherManager() {
+        didSet {
+            cityLabel.text = weatherManager.activeCity ?? ""
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +54,6 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("data has been submitted")
-        print(textField.text!)
-        
         if let city = textField.text {
             weatherManager.getWeatherForCity(city: city)
         }
