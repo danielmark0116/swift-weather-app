@@ -1,7 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "light_background.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
       "idiom" : "universal"
     },
     {
@@ -11,15 +19,11 @@
           "value" : "dark"
         }
       ],
-      "filename" : "dark_background.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }
